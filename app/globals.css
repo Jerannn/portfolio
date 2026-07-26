@@ -19,7 +19,7 @@
   --secondary-foreground: #134e4a;
 
   --muted: #f1f5f3;
-  --muted-foreground: #64748b;
+  --muted-foreground: #161616c7;
 
   --accent: #d1fae5;
   --accent-foreground: #065f46;
@@ -105,6 +105,26 @@
 
   html {
     @apply font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    @apply m-0;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
 
