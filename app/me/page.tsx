@@ -2,58 +2,54 @@ import { SquareArrowOutUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import PageLink from "../_components/PageLink";
+import { me } from "../_data/me";
 
 export default function MePage() {
   return (
     <div className="py-6 space-y-10">
       <div className="space-y-2">
         <Image
-          src="/me.jpg"
+          src={me.avatar}
           alt="Jeran"
           width={150}
           height={150}
-          className="mx-auto grayscale-75 rounded-md"
+          className="mx-auto grayscale-50 rounded-md"
         />
 
         <h1 className="text-xl font-manrope font-medium text-center">
-          Jeran Peñaredonda Deduro
+          {me.name}
         </h1>
       </div>
 
       <div className="space-y-2">
         <p className="text-5xl font-extrabold font-manrope text-center">
-          Full Stack Web Developer
+          {me.title}
         </p>
 
         <div className="max-w-50 mx-auto mb-0 grid grid-cols-2 grid-rows-2">
           <div className="flex flex-col items-center border-dashed border-r border-b p-2 w-full">
-            <p className="font-bold text-sm font-manrope">3 yrs</p>
+            <p className="font-bold text-sm font-manrope">{me.experience}</p>
             <p className="font-extralight text-xs">Experience</p>
           </div>
 
           <div className="flex flex-col items-center border-dashed border-l border-b p-2 w-full">
-            <p className="font-bold text-sm font-manrope">7</p>
+            <p className="font-bold text-sm font-manrope">{me.projects}</p>
             <p className="font-extralight text-xs">Projects</p>
           </div>
 
           <div className="flex flex-col items-center  col-span-2 border-dashed border-t p-2 ">
             <div className="flex justify-center items-center gap-3">
-              <Link
-                target="_blank"
-                href="https://github.com/jeranpena"
-                className="flex items-center gap-1 text-sm hover:text-primary hover:underline"
-              >
-                <span className="inline-block">Github</span>
-                <SquareArrowOutUpRight className="w-3 h-3" />
-              </Link>
-              <Link
-                target="_blank"
-                href="https://github.com/jeranpena"
-                className="flex items-center gap-1 text-sm hover:text-primary hover:underline"
-              >
-                <span className="inline-block">LinkedIn</span>
-                <SquareArrowOutUpRight className="w-3 h-3" />
-              </Link>
+              {me.links.map((link) => (
+                <Link
+                  key={link.label}
+                  target="_blank"
+                  href={link.href}
+                  className="flex items-center gap-1 text-sm hover:text-primary hover:underline"
+                >
+                  <span className="inline-block">{link.label}</span>
+                  <SquareArrowOutUpRight className="w-3 h-3" />
+                </Link>
+              ))}
             </div>
             <p className="font-extralight text-xs">Links</p>
           </div>

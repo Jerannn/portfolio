@@ -37,6 +37,9 @@ export const stacks = {
       name: "Zustand",
     },
     {
+      name: "Redux",
+    },
+    {
       name: "ESLint",
     },
     {

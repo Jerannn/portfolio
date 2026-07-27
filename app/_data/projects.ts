@@ -1,10 +1,13 @@
 export const projects = [
   {
     id: 1,
-    title: "Invoice Management System",
-    description:
-      "A full-stack application for managing invoices, clients, and payments.",
-    image: "/projects/invoice.png",
+    title: "polypous",
+    description: `A collection of projects I&apos;ve built while exploring modern web
+            development, from user-focused interfaces to full-stack
+            applications. Each project represents my journey of learning,
+            problem-solving, and applying technologies to create practical
+            solutions.`,
+    image: "/projects/polypous.jpg",
     technologies: ["React", "TypeScript", "Node.js", "PostgreSQL"],
     github: "https://github.com/username/project",
     demo: "https://project.com",
@@ -14,7 +17,9 @@ export const projects = [
     title: "Portfolio Website",
     description:
       "A personal portfolio built with Next.js to showcase my work and experience.",
-    image: "/projects/portfolio.png",
+    image: "/projects/test.jpg",
     technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
+    github: "https://github.com/username/project",
+    demo: "https://project.com",
   },
 ];
