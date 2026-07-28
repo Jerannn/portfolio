@@ -6,57 +6,59 @@ import { me } from "../_data/me";
 
 export default function MePage() {
   return (
-    <div className="py-6 space-y-10">
+    <div className="space-y-10 py-6">
       <div className="space-y-2">
-        <Image
-          src={me.avatar}
-          alt="Jeran"
-          width={150}
-          height={150}
-          className="mx-auto grayscale-50 rounded-md"
-        />
+        <div className="relative mx-auto h-40 w-40">
+          <Image
+            src={me.avatar}
+            alt="Image of Jeran Peñaredonda Deduro"
+            fill
+            sizes="100%"
+            className="rounded-md object-cover grayscale-50"
+          />
+        </div>
 
-        <h1 className="text-xl font-manrope font-medium text-center">
+        <h1 className="font-manrope text-center text-xl font-medium">
           {me.name}
         </h1>
       </div>
 
       <div className="space-y-2">
-        <p className="text-5xl font-extrabold font-manrope text-center">
+        <p className="font-manrope text-center text-5xl font-extrabold">
           {me.title}
         </p>
 
-        <div className="max-w-50 mx-auto mb-0 grid grid-cols-2 grid-rows-2">
-          <div className="flex flex-col items-center border-dashed border-r border-b p-2 w-full">
-            <p className="font-bold text-sm font-manrope">{me.experience}</p>
-            <p className="font-extralight text-xs">Experience</p>
+        <div className="mx-auto mb-0 grid max-w-50 grid-cols-2 grid-rows-2">
+          <div className="flex w-full flex-col items-center border-r border-b border-dashed p-2">
+            <p className="font-manrope text-sm font-bold">{me.experience}</p>
+            <p className="text-xs font-extralight">Experience</p>
           </div>
 
-          <div className="flex flex-col items-center border-dashed border-l border-b p-2 w-full">
-            <p className="font-bold text-sm font-manrope">{me.projects}</p>
-            <p className="font-extralight text-xs">Projects</p>
+          <div className="flex w-full flex-col items-center border-b border-l border-dashed p-2">
+            <p className="font-manrope text-sm font-bold">{me.projects}</p>
+            <p className="text-xs font-extralight">Projects</p>
           </div>
 
-          <div className="flex flex-col items-center  col-span-2 border-dashed border-t p-2 ">
-            <div className="flex justify-center items-center gap-3">
+          <div className="col-span-2 flex flex-col items-center border-t border-dashed p-2">
+            <div className="flex items-center justify-center gap-3">
               {me.links.map((link) => (
                 <Link
                   key={link.label}
                   target="_blank"
                   href={link.href}
-                  className="flex items-center gap-1 text-sm hover:text-primary hover:underline"
+                  className="hover:text-primary flex items-center gap-1 text-sm hover:underline"
                 >
                   <span className="inline-block">{link.label}</span>
-                  <SquareArrowOutUpRight className="w-3 h-3" />
+                  <SquareArrowOutUpRight className="h-3 w-3" />
                 </Link>
               ))}
             </div>
-            <p className="font-extralight text-xs">Links</p>
+            <p className="text-xs font-extralight">Links</p>
           </div>
         </div>
       </div>
 
-      <div className="text-sm sm:text-base space-y-4 max-w-125 mx-auto leading-relaxed">
+      <div className="mx-auto max-w-125 space-y-4 text-sm leading-relaxed sm:text-base">
         <p>
           Hi there 👋<b>₍^. .^₎⟆</b>
         </p>

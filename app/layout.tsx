@@ -33,9 +33,9 @@ export default function RootLayout({
       lang="en"
       className={`${manrope.variable} ${inter.variable} ${playfair.variable} h-full antialiased`}
     >
-      <body className="h-screen overflow-hidden flex">
-        <main className="p-5 flex-1 overflow-auto no-scrollbar">
-          <div className="max-w-3xl w-full mx-auto px-5">{children}</div>
+      <body className="flex h-screen overflow-hidden">
+        <main className="no-scrollbar flex-1 overflow-auto p-5">
+          <div className="mx-auto w-full max-w-3xl px-5">{children}</div>
         </main>
         <Sidebar />
       </body>
