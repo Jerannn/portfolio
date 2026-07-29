@@ -11,7 +11,7 @@ export default function SkillGroup({ title, items }: SkillGroupProps) {
         {items?.map((item) => (
           <span
             key={item.name}
-            className="border border-border rounded px-3 py-1.5 inline-block text-sm font-manrope"
+            className="inline-block rounded border border-border px-3 py-1.5 font-manrope text-sm text-muted-foreground"
           >
             {item.name}
           </span>

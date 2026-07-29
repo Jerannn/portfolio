@@ -4,6 +4,7 @@ import { PanelRightClose, PanelRightOpen } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import SidebarFooter from "./SidebarFooter";
 
 const navigationLinks = [
   { name: "Me", href: "/me" },
@@ -18,22 +19,21 @@ export default function Sidebar() {
 
   const openSidebarClass =
     "absolute top-0 right-0 z-50 h-screen translate-x-0 duration-300 ease-in-out md:static";
-
   const closedSidebarClass =
     "absolute top-0 right-0 z-50 h-screen translate-x-full duration-300 ease-in-out md:static";
 
   return (
     <aside
-      className={`bg-background flex w-full max-w-50 flex-col gap-5 space-y-5 border-l p-8 md:translate-x-0 ${
+      className={`flex w-full max-w-60 flex-col gap-5 space-y-5 border-l bg-background p-8 md:translate-x-0 ${
         isOpen ? openSidebarClass : closedSidebarClass
       }`}
     >
       <div className="relative">
-        <Link href="/me" className="font-playfair m-0 text-xl font-bold">
+        <Link href="/me" className="m-0 font-playfair text-xl font-bold">
           Jeran🙈
         </Link>
         <button
-          className="bg-background text-muted-foreground absolute top-1 -left-20 cursor-pointer rounded-md p-0.5 md:hidden"
+          className="absolute top-1 -left-20 cursor-pointer rounded-md bg-background p-0.5 text-muted-foreground md:hidden"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? (
@@ -49,7 +49,7 @@ export default function Sidebar() {
             <li key={item.name}>
               <Link
                 href={item.href}
-                className={`hover:text-muted-foreground text-sm ${pathname === item.href ? "font-bold" : ""}`}
+                className={`text-sm hover:text-muted-foreground ${pathname === item.href ? "font-bold" : ""}`}
               >
                 {item.name}
               </Link>
@@ -58,11 +58,7 @@ export default function Sidebar() {
         </ul>
       </nav>
 
-      <footer>
-        <p className="text-muted-foreground text-sm">
-          &copy; 2026 Jeran. All rights reserved.
-        </p>
-      </footer>
+      <SidebarFooter />
     </aside>
   );
 }

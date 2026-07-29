@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Sidebar from "./_components/Sidebar";
+import { ThemeProvider } from "./_components/ThemeProvider";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -32,12 +33,22 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${manrope.variable} ${inter.variable} ${playfair.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="flex h-screen overflow-hidden">
-        <main className="no-scrollbar flex-1 overflow-auto p-5">
-          <div className="mx-auto w-full max-w-3xl px-5">{children}</div>
-        </main>
-        <Sidebar />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="no-scrollbar flex-1 overflow-auto p-5">
+            <div className="mx-auto w-full max-w-3xl px-0 sm:px-5">
+              {children}
+            </div>
+          </main>
+          <Sidebar />
+        </ThemeProvider>
       </body>
     </html>
   );
