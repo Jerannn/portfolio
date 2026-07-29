@@ -18,7 +18,7 @@ export default function MePage() {
             alt="Image of Jeran Peñaredonda Deduro"
             fill
             sizes="100%"
-            className="rounded-md object-cover grayscale-20"
+            className="rounded-md object-cover grayscale-30"
           />
         </div>
 
