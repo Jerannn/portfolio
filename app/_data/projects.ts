@@ -36,6 +36,6 @@ export const projects: Project[] = [
       "Axios",
     ],
     github: "https://github.com/Jerannn/polypous-frontend",
-    demo: "https://polypous-frontend.vercel.app/",
+    demo: "https://polypous.vercel.app/",
   },
 ];
