@@ -10,13 +10,13 @@ type ProjectCardProps = {
 
 export default function ProjectCard({ items }: ProjectCardProps) {
   return (
-    <div className="space-y-10 overflow-hidden rounded-md bg-white">
-      <div className="space-y-3 p-7 pb-0">
+    <div className="space-y-10 overflow-hidden rounded-md bg-card">
+      <div className="space-y-7 p-7 pb-0">
         <h2 className="font-manrope text-base font-bold lowercase">
           {items.title}
         </h2>
 
-        <p className="text-muted-foreground text-sm leading-relaxed sm:text-[15px]">
+        <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
           {items.description}
         </p>
 
@@ -29,7 +29,7 @@ export default function ProjectCard({ items }: ProjectCardProps) {
           <Link
             target="_blank"
             href={items.github}
-            className="hover:text-primary text-muted-foreground font-manrope flex items-center gap-1 text-sm hover:underline"
+            className="flex items-center gap-1 font-manrope text-sm text-muted-foreground hover:text-primary hover:underline"
           >
             <span className="inline-block">GitHub</span>
             <SquareArrowOutUpRight className="h-3 w-3" />
@@ -37,7 +37,7 @@ export default function ProjectCard({ items }: ProjectCardProps) {
           <Link
             target="_blank"
             href={items.demo}
-            className="hover:text-primary text-muted-foreground font-manrope flex items-center gap-1 text-sm hover:underline"
+            className="flex items-center gap-1 font-manrope text-sm text-muted-foreground hover:text-primary hover:underline"
           >
             <span className="inline-block">Live Demo</span>
             <SquareArrowOutUpRight className="h-3 w-3" />

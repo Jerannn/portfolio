@@ -9,23 +9,23 @@ type ExperienceCardProps = {
 export default function ExperienceCard({ experience }: ExperienceCardProps) {
   return (
     <div className="space-y-15">
-      <h1 className="font-playfair text-5xl font-extrabold">
+      <h1 className="font-playfair text-3xl font-extrabold sm:text-5xl">
         {experience.company}
       </h1>
 
-      <p className="text-muted-foreground text-sm leading-relaxed sm:text-base">
+      <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
         {experience.description}
       </p>
 
-      <div className="flex justify-between gap-10 text-sm sm:text-base">
-        <div className="w-1/2 space-y-0">
+      <div className="flex flex-col justify-between gap-10 text-sm sm:flex-row sm:text-base">
+        <div className="w-full space-y-0 sm:w-1/2">
           <p className="uppercase">{experience.duration}</p>
-          <p className="text-muted-foreground text-sm uppercase">
+          <p className="text-sm text-muted-foreground uppercase">
             {experience.employmentLength}
           </p>
         </div>
 
-        <div className="w-1/2 space-y-3">
+        <div className="w-full space-y-3 sm:w-1/2">
           {experience?.details.map((detail) => (
             <div key={detail.label} className="flex justify-between gap-2">
               <span className="text-muted-foreground">{detail.label}</span>
@@ -40,7 +40,7 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
               <Link
                 target="_blank"
                 href={experience.website}
-                className="hover:text-primary flex items-center gap-1 hover:underline"
+                className="flex items-center gap-1 hover:text-primary hover:underline"
               >
                 <span className="inline-block">Visit website</span>
                 <SquareArrowOutUpRight className="h-3 w-3" />

@@ -1,11 +1,14 @@
-import PageLink from "../_components/PageLink";
 import SectionIntro from "../_components/SectionIntro";
 import SkillGroup from "../_components/SkillGroup";
 import { stacks } from "../_data/stack";
 
+export const metadata = {
+  title: "Stack / Jeran",
+};
+
 export default function StackPage() {
   return (
-    <div className="py-6 space-y-10">
+    <div className="space-y-10 py-6">
       <SectionIntro
         title="Stack"
         description="A collection of technologies I use across the frontend, backend, and infrastructure to build reliable web applications. "
@@ -24,8 +27,6 @@ export default function StackPage() {
       <SkillGroup title="Tools" items={stacks.tools} />
 
       <SkillGroup title="Learning" items={stacks.learning} />
-
-      <PageLink href="/experience" label="Experience" />
     </div>
   );
 }

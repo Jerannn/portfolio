@@ -4,6 +4,10 @@ import Link from "next/link";
 import PageLink from "../_components/PageLink";
 import { me } from "../_data/me";
 
+export const metadata = {
+  title: "Me / Jeran",
+};
+
 export default function MePage() {
   return (
     <div className="space-y-10 py-6">
@@ -14,17 +18,17 @@ export default function MePage() {
             alt="Image of Jeran Peñaredonda Deduro"
             fill
             sizes="100%"
-            className="rounded-md object-cover grayscale-50"
+            className="rounded-md object-cover grayscale-20"
           />
         </div>
 
-        <h1 className="font-manrope text-center text-xl font-medium">
+        <h1 className="text-center font-manrope text-xl font-medium">
           {me.name}
         </h1>
       </div>
 
       <div className="space-y-2">
-        <p className="font-manrope text-center text-5xl font-extrabold">
+        <p className="text-center font-manrope text-5xl font-extrabold">
           {me.title}
         </p>
 
@@ -46,7 +50,7 @@ export default function MePage() {
                   key={link.label}
                   target="_blank"
                   href={link.href}
-                  className="hover:text-primary flex items-center gap-1 text-sm hover:underline"
+                  className="flex items-center gap-1 text-sm hover:text-primary hover:underline"
                 >
                   <span className="inline-block">{link.label}</span>
                   <SquareArrowOutUpRight className="h-3 w-3" />

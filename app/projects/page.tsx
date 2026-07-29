@@ -3,6 +3,10 @@ import SectionIntro from "../_components/SectionIntro";
 import { projects } from "../_data/projects";
 import ProjectCard from "../_components/ProjectCard";
 
+export const metadata = {
+  title: "Projects / Jeran",
+};
+
 export default function ProjectsPage() {
   return (
     <div className="space-y-10 py-6">
