@@ -84,7 +84,7 @@ export default function MePage() {
         </p>
       </div>
 
-      <PageLink href="/projects" label="projects" />
+      <PageLink href="/experience" label="experience" />
     </div>
   );
 }
