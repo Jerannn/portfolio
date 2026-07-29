@@ -17,15 +17,12 @@ export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  const openSidebarClass =
-    "absolute top-0 right-0 z-50 h-screen translate-x-0 duration-300 ease-in-out md:static";
-  const closedSidebarClass =
-    "absolute top-0 right-0 z-50 h-screen translate-x-full duration-300 ease-in-out md:static";
+  const sidebarClass = isOpen ? "translate-x-0" : "translate-x-full";
 
   return (
     <aside
-      className={`flex w-full max-w-60 flex-col gap-5 space-y-5 border-l bg-background p-8 md:translate-x-0 ${
-        isOpen ? openSidebarClass : closedSidebarClass
+      className={`fixed top-0 right-0 z-50 flex h-screen w-60 flex-col gap-5 border-l bg-background p-8 transition-transform duration-300 ease-in-out md:static md:translate-x-0 ${
+        sidebarClass
       }`}
     >
       <div className="relative">
