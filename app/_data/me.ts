@@ -1,9 +1,11 @@
+import { projects } from "./projects";
+
 export const me = {
   name: "Jeran Peñaredonda Deduro",
   avatar: "/me.jpg",
   title: "Full Stack Web Developer",
   experience: "3 years",
-  projects: "1",
+  projects: projects.length,
   links: [
     {
       label: "Github",
